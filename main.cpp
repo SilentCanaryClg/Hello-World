@@ -1,21 +1,17 @@
-#include <iostream>
+#include <stdio.h>
 
+int main() {
+    int num, reversed = 0, remainder;
 
-using namespace std;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
 
-int sum(int a,int b)
-{
-    return a+b;
-}
+    while (num != 0) {
+        remainder = num % 10;         
+        reversed = reversed * 10 + remainder; 
+        num /= 10;                    
+    }
 
-
-int main()
-{
-    int a,b;
-    cout<<"enter the value of a : ";
-    cin>>a;
-    cout<<"enter the value of b :";
-    cin>>b;
-    cout<<"Sum of two nos is : "<<sum(a,b);
+    printf("Reversed number: %d\n", reversed);
     return 0;
 }
